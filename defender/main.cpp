@@ -66,7 +66,8 @@ int main(int argc, char* argv[]) {
 
     // Deploy your defenses here.
 
-    while (!exit_flag);
+    while (!exit_flag)
+        usleep(100000);
 
     watcher.join();
     return exit_code;
