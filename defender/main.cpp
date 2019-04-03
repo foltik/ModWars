@@ -34,10 +34,12 @@ int setup() {
         player->pos_z = rand();
         player->health = 100;
 
-        if (i == target)
+        if (i == target) {
             player->name = "target";
-        else
+            player->health = 1337;
+        } else {
             player->name = "player";
+        }
 
         players[i] = player;
     }
@@ -48,7 +50,7 @@ int setup() {
 void watch(int target) {
     std::cout << "[Defender] You get 30 seconds to make your move." << std::endl;
     for (int counter = 0; counter < 300; counter++) {
-        if (players[target]->health > 100) {
+        if (players[target]->health != 1337) {
             exit_code = 2;
             exit_flag = true;
             return;
