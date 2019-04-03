@@ -5,7 +5,7 @@ detected.
 
 The defender's goal is to detect and stop the attacker at all costs.
 
-Note that the attacker must be given root privileges.
+Note that the attacker must have root privileges, but the defender must not.
 Run `setuid.sh` to take root ownership of the `attacker` executable and set the
 setuid bit.
 
