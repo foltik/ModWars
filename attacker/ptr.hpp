@@ -15,7 +15,6 @@ struct ptr_base {
 
     template<typename U>
     ptr_base<T>& operator=(U rhs) {
-        std::cout << "write" << std::endl;
         write(addr, rhs);
         return *this;
     }
@@ -29,7 +28,6 @@ struct ptr<T*> : public ptr_base<T*> {
     using ptr_base<T*>::ptr_base;
     using ptr_base<T*>::operator=;
     T operator*() {
-        std::cout << "*" << this->addr << std::endl;
         return read<T>(this->addr);
     }
 };
