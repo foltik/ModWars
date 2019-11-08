@@ -1,6 +1,7 @@
 # ModWars
 
-The attacker's goal is to modify a value in the defender's memory without being
+In this game there are two roles. The attacker and the defender, both processes running in userspace.
+The attacker's goal is to make changes and modify behavior in the defender's program without being
 detected.
 
 The defender's goal is to detect and stop the attacker at all costs.
