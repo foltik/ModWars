@@ -50,11 +50,27 @@ int main(int argc, char* argv[]) {
 
     std::cout << "[Attacker] Found defender base at " << std::hex << base << std::endl;
 
-    ptr<char****> table(base + 0x61e0);
-    std::cout << table << std::endl;
+    Test t;
+    auto thing = t[3];
+
+    struct Player {
+        char pad[24];
+    };
+
+    Ptr<Player*[]> test = 0x1234;
+    Ptr<Player> p = test[2];
+
+    Ptr<Player> test = 0x1234;
+    Player test = *test;
+    Ptr<char[]> pad = test->pad;
+    char c = pad[10];
+
+    ptr<Player***> table_ptr(base + 0x61e0);
+    auto table = *table_ptr;
+
+    auto player_ptr = *table;
+
     std::cout << *table << std::endl;
-    std::cout << **table << std::endl;
-    std::cout << ***table << std::endl;
 
     return 0;
 }

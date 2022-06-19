@@ -15,6 +15,7 @@ struct Player {
     int health;
 };
 
+// &players = base + 0x61e0
 static Player** players;
 
 static std::atomic_bool exit_flag;
@@ -48,8 +49,8 @@ int setup() {
 }
 
 void watch(int target) {
-    std::cout << "[Defender] You get 30 seconds to make your move." << std::endl;
-    for (int counter = 0; counter < 300; counter++) {
+    std::cout << "[Defender] You get 300 seconds to make your move." << std::endl;
+    for (int counter = 0; counter < 3000; counter++) {
         if (players[target]->health != 1337) {
             exit_code = 2;
             exit_flag = true;
